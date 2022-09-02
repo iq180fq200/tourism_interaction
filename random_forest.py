@@ -35,7 +35,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='random forest for link prediction')
     parser.add_argument("--state_file",type = str, default = 'pure_rf.pth')
-    parser.add_argument("--outflow_file",type = str, default = 'pure_rf_result.pth')
+    parser.add_argument("--outflow_file",type = str, default = 'pure_rf_result.csv')
     parser.add_argument("--mode",type =str,default = 'train',choices=['train','test'],
                         help='to train a new model or only use a trained model to test' )
     args = parser.parse_args()

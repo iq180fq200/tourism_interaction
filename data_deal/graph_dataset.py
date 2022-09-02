@@ -8,13 +8,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
 
 #add node features
-#lon@lat@adname_id@cost@type_id@ranking@comment@area@total_trip@level@mean_time
+#['s_ranking','s_lon','s_lat','s_adname_id','s_cost','s_type_id','s_comment','s_area','s_level','s_mean_time','e_ranking','e_lon','e_lat','e_adname_id','e_cost','e_type_id','e_comment','e_area','e_level','e_mean_time','distance']
 def normalize_features(raw_features,feat_names):
     #devide feature names
     std_fnames = []
     minmax_fnames = []
     for item in feat_names:
-        if item in ['lon','lat','adname_id','type_id','ranking','level','mean_time']:
+        if item in ['s_lon','s_lat','s_adname_id','s_type_id','s_ranking','s_level','distance','e_lon','e_lat','e_adname_id','e_type_id','e_ranking','e_level']:
             minmax_fnames.append(item)
         else:
             std_fnames.append(item)
