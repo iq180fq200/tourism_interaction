@@ -1,0 +1,14 @@
+
+[model name]encoder.pth@decoder.sav
+[features]lon@lat@cost@type_id@ranking@comment@level@area@mean_time
+[early stop at]7655
+[testing results]MSE 17436.898244418342, MAPE 0.5292313464544889
+[valid results]MSE 21552.767657320655, MAPE 0.4645848050722972
+[outflow file]rfgcn_inter_thre_200.csv
+
+[model name]encoder_mlp_ep.pth@decoder_mlp_ep.sav
+[features]lon@lat@cost@type_id@ranking@comment@level@area@mean_time
+[early stop at]1966
+[testing results]MSE 84465.9619703887, MAPE 1.8884818036351527
+[valid results]MSE 89124.78024988886, MAPE 1.8250815826383942
+[outflow file]rfgcn_inter_thre_200_mlp_ep.csv

@@ -1,0 +1,14 @@
+
+[model name]inter_thre_rgcnrf_encoder.pth@inter_thre_rgcnrf_decoder.pth
+[features]cost@type_id@ranking@comment@level@area
+[early stop at]1568
+[testing results]MSE 26593.52734375, MAPE 1.284912
+[valid results]MSE 24247.158203125, MAPE 1.2834978
+[outflow file]inter_thre_200_rgcn.csv@inter_thre_200_rgcn_rf.csv
+
+[model name]inter_thre_rgcnrf_encoder_1.pth@inter_thre_rgcnrf_decoder_1.pth
+[features]lon@lat@cost@type_id@ranking@comment@level@area@mean_time
+[early stop at]2367
+[testing results]MSE 13711.5869140625, MAPE 1.3517287
+[valid results]MSE 9562.9619140625, MAPE 1.343742
+[outflow file]inter_thre_200_rgcn_1.csv@inter_thre_200_rgcn_rf_1.csv
