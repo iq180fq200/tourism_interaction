@@ -1,6 +1,9 @@
 import pandas as pd
 import os
 import numpy as np
+from torch.utils.data import Dataset
+
+
 def get_distances_parts(src,dst,dataset_path = 'data'):
     dist_data = pd.read_csv(os.path.join(dataset_path, 'dist_edge.csv'),delimiter = '\t',header = None)
     dist_dict = {}
@@ -46,3 +49,15 @@ def get_distances_all(dataset_path = 'data'):
         test_distance.append(dist_dict[item])
 
     return np.array(train_distance).reshape((-1,1)),np.array(valid_distance).reshape((-1,1)),np.array(test_distance).reshape((-1,1))
+
+#dataset for batch feed in
+class MyDataset(Dataset):
+    def __init__(self, x_tensors, y_tensors):
+        self.x_tensors = x_tensors
+        self.y_tensors = y_tensors
+
+    def __len__(self):
+        return len(self.x_tensors)
+
+    def __getitem__(self, idx):
+        return self.x_tensors[idx],self.y_tensors[idx]
